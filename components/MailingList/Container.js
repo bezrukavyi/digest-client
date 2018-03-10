@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
   value: state.test
 })
 
-const increment = () => ({ type: 'INCREMENT' })
+const increment = (id) => ({ type: 'INCREMENT', id })
 
 const mapDispatchToProps = ({
   increment

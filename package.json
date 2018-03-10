@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "node server/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "isomorphic-unfetch": "^2.0.0",
     "next": "^5.0.0",
@@ -23,6 +24,7 @@
     "redux-saga": "^0.16.0"
   },
   "devDependencies": {
+    "babel-plugin-root-import": "^5.1.0",
     "webpack-bundle-analyzer": "^2.11.1"
   }
 }

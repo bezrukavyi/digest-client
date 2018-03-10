@@ -1,7 +1,9 @@
-const MailingList = (props) => (
+const MailingList = ({ increment, value }) => (
   <div>
-    <p>{props.value}</p>
-    <button onClick={props.increment}>Increment</button>
+    {Object.keys(value).map((name) =>
+      <li key={name}>{name} : {value[name]}</li>
+    )}
+    <button onClick={() => increment(value.id)}>Increment</button>
   </div>
 )
 

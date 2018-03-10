@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux'
 
-const reducer = (state = 0, action) => {
-  switch (action.type) {
+const reducer = (state = {}, { type, data }) => {
+  switch (type) {
     case 'INCREMENT_SUCCESS':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
+      return { ...state, ...data }
     default:
       return state
   }
