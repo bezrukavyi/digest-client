@@ -1,0 +1,5 @@
+export const FETCH_ENTITY = 'FETCH_ENTITY_'
+export const UPDATE_ENTITY = 'UPDATE_ENTITY_'
+export const CREATE_ENTITY = 'CREATE_ENTITY_'
+export const FETCH_ENTITIES = 'FETCH_ENTITIES_'
+export const DESTROY_ENTITY = 'DESTROY_ENTITY_'

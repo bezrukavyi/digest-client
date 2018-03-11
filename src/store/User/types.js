@@ -1,0 +1,1 @@
+export const VALIDATE_TOKEN = 'VALIDATE_TOKEN_'

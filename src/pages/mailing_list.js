@@ -1,9 +1,8 @@
 import Layout from '~/components/Layout'
-import fetch from 'isomorphic-unfetch'
 import withReduxSaga from '~/store';
 import MailingListView from '~/components/MailingList';
 
-import fetchProps from '~/fetchProps'
+import initial from '~/initial'
 
 const MailingList = (props) => (
   <Layout.Base>
@@ -13,9 +12,9 @@ const MailingList = (props) => (
 
 const dispatchProps = () => (context) => {
   const { id } = context.query
-  context.store.dispatch({ type: "INCREMENT", id })
+  context.store.dispatch({ type: "MAILING_LIST_FETCH", id, context })
 }
 
-MailingList.getInitialProps = fetchProps([dispatchProps])
+MailingList.getInitialProps = initial([dispatchProps])
 
 export default withReduxSaga(MailingList);
