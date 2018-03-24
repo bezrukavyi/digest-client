@@ -5,7 +5,7 @@ import createSagaMiddleware from 'redux-saga'
 
 import configureMiddlewares from './middlewares'
 import reducer from './reducer'
-import rootSaga from '~/saga'
+import rootSaga from './saga'
 
 const saga = createSagaMiddleware()
 

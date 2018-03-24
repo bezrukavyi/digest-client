@@ -2,8 +2,7 @@ import middleware from './middlewares'
 import reduceFunc from '~/utils/reduceFunc'
 
 const baseMiddleWares = [
-  middleware.analytic,
-  middleware.auth,
+  middleware.analytic
 ]
 
 const finish = (next) => (context) => {

@@ -1,7 +1,10 @@
 import Layout from '~/components/Layout'
+import withReduxSaga from '~/store'
 
-export default () => (
+const About = () => (
   <Layout.Base>
     <p>This is the about page</p>
   </Layout.Base>
 )
+
+export default withReduxSaga(About)

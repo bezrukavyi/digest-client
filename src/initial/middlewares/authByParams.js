@@ -9,16 +9,18 @@ const handleError = (error, context) => {
   return req ? res.redirect('/unauthorized') : redirect('/unauthorized')
 }
 
-const auth = next => async (context) => {
+const authByParams = next => async (context) => {
   const { isServer, store } = context
 
+  if (!isServer) return handleError(error, context)
+
   try {
+    Cookie.saveHeaders(context, context.query)
     const result = await User.requests.vaildateToken(context)()
-    Cookie.saveHeaders(context, result.headers)
     return next(context)
   } catch(error) {
     handleError(error, context)
   }
 }
 
-export default auth
+export default authByParams

@@ -1,12 +1,18 @@
 import Router from 'next/router'
 
-const redirect = (target, context = {}) => {
+export const redirect = (context) => (path, params = {}) => {
   if (context.res) {
-    context.res.writeHead(303, { Location: target });
-    context.res.end();
+    context.res.writeHead(303, { Location: path.href })
+    context.res.end()
   } else {
-    Router.replace(target);
+    replace(path, params)
   }
-};
+}
 
-export default redirect
+export const replace = (path, params) => {
+  if (params) {
+    Router.replace(path.href(params), path.as(params), { shallow: true })
+  } else {
+    Router.replace(path.href, path.as, { shallow: true })
+  }
+}

@@ -1,7 +1,6 @@
 import Layout from '~/components/Layout'
 import withReduxSaga from '~/store';
 import MailingListView from '~/components/MailingList';
-
 import initial from '~/initial'
 
 const MailingList = (props) => (

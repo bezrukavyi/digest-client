@@ -1,5 +1,5 @@
 import Link from 'next/link'
-
+import withReduxSaga from '~/store'
 import Layout from '~/components/Layout'
 import PostLink from '~/components/PostLink'
 import Api from '~/store/Api/actions'
@@ -25,4 +25,5 @@ Index.getInitialProps = async function (context) {
   }
 }
 
-export default Index
+export default withReduxSaga(Index)
+

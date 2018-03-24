@@ -11,8 +11,6 @@ const transformResponse = (data) => {
   return camelCaseKeys(parsedData)
 }
 
-const transformRequest = snakeCaseKeys
-
 const request = (method) => (context) => ({ path, data, params }) => {
   const headers = Cookie.get(context)
 
@@ -20,9 +18,8 @@ const request = (method) => (context) => ({ path, data, params }) => {
     baseURL: process.env.API_DOMAIN,
     method: method,
     url: path,
-    data,
+    data: snakeCaseKeys(data || {}),
     params,
-    transformRequest,
     transformResponse,
     headers,
   }
