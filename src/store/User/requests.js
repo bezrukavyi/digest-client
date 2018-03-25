@@ -7,3 +7,5 @@ export const signIn = (data) => Api.post({})({ path: 'auth/sign_in', data })
 export const signUp = (data) => Api.post({})({ path: 'auth', data })
 
 export const forgotPassword = (data) => Api.post({})({ path: 'auth/password', data })
+
+export const updatePassword = (data) => Api.patch({})({ path: 'auth/password', data })

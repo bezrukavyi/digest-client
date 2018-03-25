@@ -1,10 +1,9 @@
-// Context Middlewares
 import { default as auth } from './auth'
 import { default as analytic } from './analytic'
-import { default as authByParams } from './authByParams'
+import { default as resetPassword } from './resetPassword'
 
 export default {
   auth,
   analytic,
-  authByParams,
+  resetPassword,
 }

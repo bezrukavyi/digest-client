@@ -7,10 +7,10 @@ import middle from '~/initial/middlewares'
 const ForgotPassword = (props) => (
   <Layout.Base>
     <p>This is the forgot password page</p>
-    <User.ForgotPasswordForm />
+    <User.ResetPasswordForm />
   </Layout.Base>
 )
 
-ForgotPassword.getInitialProps = initial([middle.authByParams])
+ForgotPassword.getInitialProps = initial([middle.resetPassword])
 
 export default withReduxSaga(ForgotPassword)

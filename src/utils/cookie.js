@@ -15,15 +15,12 @@ const save = (context, headers) => {
 
 const extractHeaders = pick(['token', 'client-id', 'uid'])
 
-const saveHeaders = (context, content) => {
-  let headers = extractHeaders(content)
-  if (!headers['client-id']) headers['client-id'] = content['client_id']
-  return save(context, headers)
-}
+const saveHeaders = (context, headers) => save(context, extractHeaders(headers))
 
-const get = (context) => {
-  const headers = context.req ? context.req.cookies[KEY] : clientCookie.get(KEY)
-  return headers ? JSON.parse(headers) : {}
+const get = (context, name) => {
+  let headers = context.req ? context.req.cookies[KEY] : clientCookie.get(KEY)
+  headers = headers ? JSON.parse(headers) : {}
+  return name ? headers[name] : headers 
 }
 
 const clear = (context) => {
@@ -39,4 +36,5 @@ export default {
   save,
   saveHeaders,
   clear,
+  extractHeaders,
 }
