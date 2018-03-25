@@ -1,1 +1,1 @@
-export const VALIDATE_TOKEN = 'VALIDATE_TOKEN_'
+export const VALIDATE_TOKEN = 'VALIDATE_TOKEN'

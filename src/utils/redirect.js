@@ -1,6 +1,6 @@
 import Router from 'next/router'
 
-export const redirect = (context) => (path, params = {}) => {
+export const redirect = (context) => (path, params = null) => {
   if (context.res) {
     context.res.writeHead(303, { Location: path.href })
     context.res.end()

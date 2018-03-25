@@ -1,1 +1,5 @@
-export { default } from './Container'
+import { default as Info } from './Info'
+
+export default {
+  Info,
+}

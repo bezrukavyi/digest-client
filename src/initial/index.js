@@ -2,15 +2,11 @@ import middleware from './middlewares'
 import reduceFunc from '~/utils/reduceFunc'
 
 const baseMiddleWares = [
-  middleware.analytic
+  middleware.analytic,
+  middleware.fetchProps,
 ]
 
-const finish = (next) => (context) => {
-  console.log('Finish')
-}
-
 export default (middlewares = []) => {
-  const runList = baseMiddleWares.concat(middlewares, finish)
+  const runList = [...middlewares, ...baseMiddleWares]
   return reduceFunc(runList)
 }
-

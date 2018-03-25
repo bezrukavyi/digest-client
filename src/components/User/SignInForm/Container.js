@@ -19,7 +19,7 @@ const onSuccess = ({ props, setSubmitting, setErrors }) => (response) => {
   setSubmitting(false)
   props.insertUser(response.data)
   Cookie.saveHeaders({}, response.headers)
-  replace(Path.Root)
+  replace(Path.Dashboard.Root)
 }
 
 const handleSubmit = (values, props) => {

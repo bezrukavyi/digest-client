@@ -1,19 +1,15 @@
 import Layout from '~/components/Layout'
 import withReduxSaga from '~/store';
-import MailingListView from '~/components/MailingList';
+import MailingList from '~/components/MailingList';
 import initial from '~/initial'
+import middle from '~/initial/middlewares'
 
-const MailingList = (props) => (
+const Page = (props) => (
   <Layout.Base>
-    <MailingListView />
+    <h1>Mailing List Item</h1>
   </Layout.Base>
 )
 
-const dispatchProps = () => (context) => {
-  const { id } = context.query
-  context.store.dispatch({ type: "MAILING_LIST_FETCH", id, context })
-}
+Page.getInitialProps = initial([middle.auth])
 
-MailingList.getInitialProps = initial([dispatchProps])
-
-export default withReduxSaga(MailingList);
+export default withReduxSaga(Page)

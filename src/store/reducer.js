@@ -5,12 +5,13 @@ import User from './User'
 
 const reducer = (state = {}, { type, data }) => {
   switch (type) {
-    case 'INCREMENT_SUCCESS':
+    case 'MAILING_LIST_FETCH_LIST_SUCCESS': {
       return { ...state, ...data }
+    }
     default:
       return state
   }
-};
+}
 
 export default combineReducers({
   test: reducer,

@@ -1,8 +1,8 @@
 const PREFIX = '/dashboard'
 
 const Root = {
-  href: (id) => PREFIX,
-  as: (id) => PREFIX
+  href: PREFIX,
+  as: PREFIX,
 }
 
 const MailingList = {

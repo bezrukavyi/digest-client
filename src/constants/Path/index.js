@@ -10,6 +10,8 @@ const NotFound = {
   as: '/404',
 }
 
+const NotAllowed = Dashboard.SignIn
+
 const Error500 = {
   href: '/500',
   as: '/500',
@@ -20,4 +22,5 @@ export default {
   NotFound,
   Dashboard,
   Error500,
+  NotAllowed,
 }

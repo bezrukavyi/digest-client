@@ -1,13 +1,7 @@
-import { select, call } from 'redux-saga/effects'
 import Cookie from '~/utils/cookie'
-
+import Path from '~/constants/Path'
 import { redirect } from '~/utils/redirect'
 import User from '~/store/User'
-
-const handleError = (error, context) => {
-  const { req, res } = context
-  return req ? res.redirect('/unauthorized') : redirect('/unauthorized')
-}
 
 const auth = next => async (context) => {
   const { isServer, store } = context
@@ -15,9 +9,10 @@ const auth = next => async (context) => {
   try {
     const result = await User.requests.vaildateToken(context)()
     Cookie.saveHeaders(context, result.headers)
+    store.dispatch(User.actions.insertUser(result.data))
     return next(context)
   } catch(error) {
-    handleError(error, context)
+    redirect(context)(Path.NotAllowed)
   }
 }
 

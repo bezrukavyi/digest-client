@@ -1,16 +1,9 @@
-import { select, call } from 'redux-saga/effects'
 import Cookie from '~/utils/cookie'
-import { pick } from 'ramda'
-
+import Path from '~/constants/Path'
 import { redirect } from '~/utils/redirect'
 import User from '~/store/User'
 
 const TOKEN_KEY = 'reset_password_token'
-
-const handleError = (error, context) => {
-  const { req, res } = context
-  return req ? res.redirect('/invalid_link') : redirect('/invalid_link')
-}
 
 const saveCredentials = (context) => {
   const credentials = extractCredentials(context.query)
@@ -32,10 +25,9 @@ const resetPassword = next => async (context) => {
 
   try {
     saveCredentials(context)
-    await User.requests.vaildateToken(context)()
     return next(context)
   } catch(error) {
-    handleError(error, context)
+    redirect(context)(Path.NotAllowed)
   }
 }
 

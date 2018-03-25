@@ -19,6 +19,9 @@ const Header = () =>
     <Link href="/dashboard/forgot_password">
       <button>Forgot password</button>
     </Link>
+    <Link href="/dashboard">
+      <button>Dashboard root</button>
+    </Link>
     <User.SignOutButton />
   </div>
 
