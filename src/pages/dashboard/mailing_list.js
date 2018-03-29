@@ -1,8 +1,8 @@
-import Layout from '~/components/Layout'
-import withReduxSaga from '~/store';
-import MailingList from '~/components/MailingList';
-import initial from '~/initial'
-import middle from '~/initial/middlewares'
+import Layout from 'components/Layout'
+import withReduxSaga from 'store';
+import MailingList from 'components/MailingList';
+import initial from 'initial'
+import middle from 'initial/middlewares'
 
 const Page = (props) => (
   <Layout.Base>

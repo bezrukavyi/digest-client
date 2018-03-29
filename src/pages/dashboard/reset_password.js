@@ -1,8 +1,8 @@
-import Layout from '~/components/Layout'
-import User from '~/components/User'
-import withReduxSaga from '~/store';
-import initial from '~/initial'
-import middle from '~/initial/middlewares'
+import Layout from 'components/Layout'
+import User from 'components/User'
+import withReduxSaga from 'store';
+import initial from 'initial'
+import middle from 'initial/middlewares'
 
 const ForgotPassword = (props) => (
   <Layout.Base>

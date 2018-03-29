@@ -1,4 +1,4 @@
-import normalize from '~/utils/normalizer'
+import normalize from 'utils/normalizer'
 import { transform, pickBy, keys, filter, uniq } from 'lodash'
 import dotProp from 'dot-prop-immutable'
 

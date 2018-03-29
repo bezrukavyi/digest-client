@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
-import { replace } from '~/utils/redirect'
-import Path from '~/constants/Path'
+import { replace } from 'utils/redirect'
+import Path from 'constants/Path'
 import Component from './Component'
-import User from '~/store/User'
-import Cookie from '~/utils/cookie'
+import User from 'store/User'
+import Cookie from 'utils/cookie'
 
 const mapDispatchToProps = {
   ...User.actions

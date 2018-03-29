@@ -1,5 +1,5 @@
-import Layout from '~/components/Layout'
-import withReduxSaga from '~/store'
+import Layout from 'components/Layout'
+import withReduxSaga from 'store'
 
 const About = () => (
   <Layout.Base>

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
 import { withFormik } from 'formik'
-import { replace } from '~/utils/redirect'
-import Path from '~/constants/Path'
+import { replace } from 'utils/redirect'
+import Path from 'constants/Path'
 import Component from './Component'
-import User from '~/store/User'
-import Cookie from '~/utils/cookie'
-import formError from '~/utils/formError'
+import User from 'store/User'
+import Cookie from 'utils/cookie'
+import formError from 'utils/formError'
 
 const mapStateToProps = (state) => ({
 })

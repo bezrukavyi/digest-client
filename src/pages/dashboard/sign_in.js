@@ -1,7 +1,7 @@
-import Layout from '~/components/Layout'
-import User from '~/components/User'
-import withReduxSaga from '~/store';
-import initial from '~/initial'
+import Layout from 'components/Layout'
+import User from 'components/User'
+import withReduxSaga from 'store';
+import initial from 'initial'
 
 const SignIn = (props) => (
   <Layout.Base>

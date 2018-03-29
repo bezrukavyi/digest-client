@@ -1,7 +1,7 @@
 import { select, call, put, takeEvery, takeLatest } from 'redux-saga/effects'
 import * as MailingList from './requests'
-import Path from '~/constants/Path'
-import { redirect } from '~/utils/redirect'
+import Path from 'constants/Path'
+import { redirect } from 'utils/redirect'
 
 function* fetchList({ context }) {
   try {

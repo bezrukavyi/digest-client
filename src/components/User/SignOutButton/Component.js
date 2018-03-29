@@ -1,4 +1,4 @@
-import Field from '~/components/Field'
+import Field from 'components/Field'
 
 const SignOutButton = (props) => (
   <button onClick={props.signOut}>

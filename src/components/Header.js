@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import User from '~/components/User'
+import User from 'components/User'
 
 const Header = () =>
   <div>

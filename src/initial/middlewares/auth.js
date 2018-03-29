@@ -1,7 +1,7 @@
-import Cookie from '~/utils/cookie'
-import Path from '~/constants/Path'
-import { redirect } from '~/utils/redirect'
-import User from '~/store/User'
+import Cookie from 'utils/cookie'
+import Path from 'constants/Path'
+import { redirect } from 'utils/redirect'
+import User from 'store/User'
 
 const auth = next => async (context) => {
   const { isServer, store } = context

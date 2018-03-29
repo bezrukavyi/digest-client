@@ -1,5 +1,5 @@
 import { map } from 'lodash'
-import PostLink from '~/components/PostLink'
+import PostLink from 'components/PostLink'
 
 const MailingList = (props) => (
   <div>

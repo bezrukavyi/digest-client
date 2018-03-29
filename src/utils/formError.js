@@ -2,7 +2,7 @@ import dotProp, { get } from 'dot-prop-immutable';
 import { cond, pipe, identity, chain, T, toPairs } from 'ramda'
 import { isArray, transform, isNil, isString, join, capitalize, lowerCase } from 'lodash'
 import { replace } from './redirect'
-import Path from '~/constants/Path'
+import Path from 'constants/Path'
 
 const adaptErrors = (errors) => transform(errors, (result, value, key) => result[key] = join(value, ', '), {})
 

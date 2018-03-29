@@ -1,4 +1,4 @@
-import Path from '~/constants/Path'
+import Path from 'constants/Path'
 
 const dashboardRoot = (context) => {
   const { dispatch } = context.store

@@ -10,18 +10,20 @@
   ],
   "plugins": [
     [
-      "babel-plugin-root-import",
+      "module-resolver",
       {
-        "rootPathPrefix": "~",
-        "rootPathSuffix": "src/"
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "~": "./src",
+          "styles": "./src/static/styles",
+          "components": "./src/components",
+          "constants": "./src/constants",
+          "utils": "./src/utils",
+          "initials": "./src/initials"
+        }
       }
     ]
-  ],
-  "env": {
-    "development": {
-      "plugins": [
-        "inline-dotenv"
-      ]
-    }
-  }
+  ]
 }

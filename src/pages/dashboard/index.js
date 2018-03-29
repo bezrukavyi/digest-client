@@ -1,8 +1,8 @@
-import withReduxSaga from '~/store'
-import Layout from '~/components/Layout'
-import MailingList from '~/components/MailingList'
-import initial from '~/initial'
-import middle from '~/initial/middlewares'
+import withReduxSaga from 'store'
+import Layout from 'components/Layout'
+import MailingList from 'components/MailingList'
+import initial from 'initial'
+import middle from 'initial/middlewares'
 
 const Index = (props) =>
   <Layout.Base>

@@ -1,7 +1,7 @@
-import Cookie from '~/utils/cookie'
-import Path from '~/constants/Path'
-import { redirect } from '~/utils/redirect'
-import User from '~/store/User'
+import Cookie from 'utils/cookie'
+import Path from 'constants/Path'
+import { redirect } from 'utils/redirect'
+import User from 'store/User'
 
 const TOKEN_KEY = 'reset_password_token'
 

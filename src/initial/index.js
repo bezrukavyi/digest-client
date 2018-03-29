@@ -1,5 +1,5 @@
 import middleware from './middlewares'
-import reduceFunc from '~/utils/reduceFunc'
+import reduceFunc from 'utils/reduceFunc'
 
 const baseMiddleWares = [
   middleware.analytic,
