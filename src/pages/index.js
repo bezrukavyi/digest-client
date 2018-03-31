@@ -6,8 +6,7 @@ import Api from 'store/Api/actions'
 
 const Index = (props) =>
   <Layout.Base>
-    <h1>Root</h1>
+    Landing
   </Layout.Base>
 
 export default withReduxSaga(Index)
-
