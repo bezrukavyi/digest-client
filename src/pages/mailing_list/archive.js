@@ -2,6 +2,7 @@ import Link from 'next/link'
 import withReduxSaga from 'store'
 import Layout from 'components/Layout'
 import Issue from 'components/Issue'
+import initial from 'initial'
 
 const Page = (props) =>
   <Layout.MailingList>
@@ -11,5 +12,7 @@ const Page = (props) =>
       </div>
     </div>
   </Layout.MailingList>
+
+Page.getInitialProps = initial()
 
 export default withReduxSaga(Page)

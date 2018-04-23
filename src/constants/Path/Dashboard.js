@@ -1,35 +1,47 @@
-const PREFIX = '/dashboard'
+const PREFIX = '/dashboard/'
 
 const Root = {
-  href: PREFIX,
-  as: PREFIX,
+  page: `/dashboard`,
+  href: '/dashboard',
+  as: '/dashboard',
 }
 
 const MailingList = {
-  href: (id) => PREFIX + `/mailing_list?id=${id}`,
-  as: (id) => PREFIX + `/mailing_lists/${id}`,
+  page: PREFIX + `mailing_list`,
+  href: (id) => PREFIX + `mailing_list?mailingListId=${id}`,
+  as: (id) => PREFIX + id,
+}
+
+const IssueNew = {
+  page: PREFIX + `issue_new`,
+  href: (mailingListId) => PREFIX + `issue_new?mailingListId=${mailingListId}`,
+  as: (mailingListId) => PREFIX + `${mailingListId}/issues/new`
 }
 
 const SignIn = {
-  href: PREFIX + '/sign_in',
-  as: PREFIX + '/sign_in'
+  page: PREFIX + `sign_in`,
+  href: PREFIX + 'sign_in',
+  as: PREFIX + 'sign_in'
 }
 
 const SignUp = {
-  href: PREFIX + '/sign_up',
-  as: PREFIX + '/sign_up'
+  page: PREFIX + `sign_up`,
+  href: PREFIX + 'sign_up',
+  as: PREFIX + 'sign_up'
 }
 
 const ForgotPassword = {
-  href: PREFIX + '/forgot_password',
-  as: PREFIX + '/forgot_password'
+  page: PREFIX + `forgot_password`,
+  href: PREFIX + 'forgot_password',
+  as: PREFIX + 'forgot_password'
 }
 
-export default {
+module.exports = {
   Root,
   MailingList,
   SignIn,
   SignUp,
   ForgotPassword,
+  IssueNew,
 }
 

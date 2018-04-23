@@ -1,4 +1,7 @@
-const Header = () =>
+import timeFormat from 'utils/timeFormat'
+import { startCase } from 'lodash'
+
+const Header = ({issue}) =>
   <tr>
     <td className="issue-html__header">
       <table align="left" cellPadding={0} cellSpacing={0} width="100%">
@@ -9,9 +12,9 @@ const Header = () =>
                 <tbody>
                   <tr>
                     <td>
-                      <span className="title">Invasion of the Flying Wizard</span>
+                      <span className="title">{startCase(issue.name)}</span>
                       <div style={{ height: 10 }} />
-                      <span className="title subtitle">#10</span>
+                      <span className="title subtitle">#{issue.releaseNumber}</span>
                     </td>
                   </tr>
                 </tbody>
@@ -20,7 +23,7 @@ const Header = () =>
                 <tbody>
                   <tr>
                     <td>
-                      <span className="date">March  4, 2018</span>
+                      <span className="date">{timeFormat.default(issue.releaseAt)}</span>
                     </td>
                   </tr>
                 </tbody>

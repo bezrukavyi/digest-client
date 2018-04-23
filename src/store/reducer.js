@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 
 import Entities from './Entities'
 import User from './User'
+import Meta from './Meta'
 
 const reducer = (state = {}, { type, data }) => {
   switch (type) {
@@ -17,4 +18,5 @@ export default combineReducers({
   test: reducer,
   entities: Entities.reducer,
   user: User.reducer,
+  meta: Meta.reducer,
 })

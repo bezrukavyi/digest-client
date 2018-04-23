@@ -1,17 +1,17 @@
 import withReduxSaga from 'store'
 import Layout from 'components/Layout'
-import MailingList from 'components/MailingList'
+import Dashboard from 'components/Dashboard'
 import initial from 'initial'
 import middle from 'initial/middlewares'
 
-const Index = (props) =>
-  <Layout.Base>
-    <h1>Dashboard Root</h1>
-    <MailingList.Info />
-  </Layout.Base>
+const Page = (props) =>
+  <Layout.Dashboard>
+    <Dashboard.MailingList.List />
+    <Dashboard.MailingList.CreateForm />
+  </Layout.Dashboard>
 
 
-Index.getInitialProps = initial([middle.auth])
+Page.getInitialProps = initial([middle.auth])
 
-export default withReduxSaga(Index)
+export default withReduxSaga(Page)
 

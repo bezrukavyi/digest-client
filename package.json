@@ -11,12 +11,16 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap": "^4.0.0",
     "classnames": "^2.2.5",
+    "compass-mixins": "^0.12.10",
     "cookie-parser": "^1.4.3",
+    "deepmerge": "^2.1.0",
     "dot-prop-immutable": "^1.4.0",
     "express": "^4.16.2",
     "formik": "^0.11.11",
     "js-cookie": "^2.2.0",
+    "json-api-transform": "^1.0.1",
     "lodash": "^4.17.5",
     "next": "^5.0.0",
     "next-redux-saga": "^2.0.1",
@@ -28,9 +32,7 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.16.0",
-    "serve-favicon": "^2.4.5",
-    "compass-mixins": "^0.12.10",
-    "bootstrap": "^4.0.0"
+    "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",

@@ -3,6 +3,7 @@ import withReduxSaga from 'store'
 import Layout from 'components/Layout'
 import Issue from 'components/Issue'
 import Subscription from 'components/Subscription'
+import initial from 'initial'
 
 const Page = (props) =>
   <Layout.Base max={true}>
@@ -12,10 +13,12 @@ const Page = (props) =>
       </div>
       <div className="col-lg-6 middle-align justify-content-center center">
         <Subscription.Iphone>
-          <Issue.Letter />
+          <Issue.LastLetter />
         </Subscription.Iphone>
       </div>
     </div>
   </Layout.Base>
+
+Page.getInitialProps = initial()
 
 export default withReduxSaga(Page)

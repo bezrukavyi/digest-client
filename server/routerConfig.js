@@ -1,22 +1,59 @@
-const Path = {
-  Dashboard: {
-    MailingList: {
-      server: '/dashboard/mailing_lists/:id',
-      actual: '/dashboard/mailing_list',
-    }
+const path = require('path')
+const Path = require(path.join(__dirname, '../src/constants/Path'))
+
+StaticResources = [
+  Path.Root,
+  Path.NotFound,
+  Path.NotAllowed,
+  Path.Error500,
+  Path.Dashboard.Root,
+  Path.Dashboard.SignIn,
+  Path.Dashboard.SignUp,
+  Path.Dashboard.ForgotPassword,
+]
+
+DynamicResources = {
+  'Dashboard.MailingList': {
+    resourcePath: Path.Dashboard.MailingList,
+    params: [':mailingListId'],
   },
-  Any: '*',
+  'Dashboard.IssueNew': {
+    resourcePath: Path.Dashboard.IssueNew,
+    params: [':mailingListId'],
+  },
+  'MailingList.Archive': {
+    resourcePath: Path.MailingList.Archive,
+    params: [':mailingListId'],
+  },
+  'MailingList.Issue': {
+    resourcePath: Path.MailingList.Issue,
+    params: [':mailingListId', ':issueId'],
+  },
+  'MailingList.Root': {
+    resourcePath: Path.MailingList.Root,
+    params: [':mailingListId'],
+  },
 }
 
 const routerConfig = ({ server, app }) => {
   const handle = app.getRequestHandler()
 
-  server.get(Path.Dashboard.MailingList.server, (req, res) => {
-    const queryParams = { id: req.params.id }
-    app.render(req, res, Path.Dashboard.MailingList.actual, queryParams)
+  StaticResources.forEach((resourcePath) => {
+    server.get(resourcePath.as, (req, res) => {
+      app.render(req, res, resourcePath.page, { ...req.params })
+    })
   })
 
-  server.get(Path.Any, (req, res) => {
+  Object.keys(DynamicResources).forEach((name) => {
+    const resourceParams = DynamicResources[name].params
+    const resourcePath = DynamicResources[name].resourcePath
+
+    server.get(resourcePath.as(...resourceParams), (req, res) => {
+      app.render(req, res, resourcePath.page, { ...req.params })
+    })
+  })
+
+  server.get('*', (req, res) => {
     return handle(req, res)
   })
 

@@ -1,26 +1,33 @@
-import { default as Dashboard } from './Dashboard'
+const Dashboard = require('./Dashboard')
+const MailingList = require('./MailingList')
+
+const PREFIX = '/'
 
 const Root = {
-  href: '/',
-  as: '/',
+  page: PREFIX + 'index',
+  href: PREFIX,
+  as: PREFIX,
 }
 
 const NotFound = {
-  href: '/404',
-  as: '/404',
+  page: PREFIX + '404',
+  href: PREFIX + '404',
+  as: PREFIX + '404',
 }
 
 const NotAllowed = Dashboard.SignIn
 
 const Error500 = {
-  href: '/500',
-  as: '/500',
+  page: PREFIX + '500',
+  href: PREFIX + '500',
+  as: PREFIX + '500',
 }
 
-export default {
+module.exports = {
+  Dashboard,
+  MailingList,
   Root,
   NotFound,
-  Dashboard,
   Error500,
   NotAllowed,
 }

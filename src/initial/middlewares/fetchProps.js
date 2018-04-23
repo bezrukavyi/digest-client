@@ -1,21 +1,13 @@
 import Path from 'constants/Path'
+import { camelCase } from 'lodash'
 
-const dashboardRoot = (context) => {
-  const { dispatch } = context.store
-  dispatch({ type: "MAILING_LIST_FETCH_LIST_REQUEST", context })
-}
+const PAGE = 'PAGE'
 
-const FETCH_MAP = {
-  [Path.Dashboard.Root.as]: dashboardRoot,
-}
-
-
-const fetchProps = () => async (context) => {
+const fetchProps = next => async (context) => {
   const { isServer, store } = context
 
   try {
-    const fetcher = FETCH_MAP[context.asPath]
-    if (fetcher) fetcher(context)
+    store.dispatch({ type: PAGE + context.pathname, context })
   } catch (error) {
     console.log('error', error)
   }

@@ -1,6 +1,6 @@
-const Description = () =>
+const Description = ({issue}) =>
   <p className='description'>
-    Description
+    {issue.name}
   </p>
 
 export default Description

@@ -31,6 +31,6 @@ export default {
   get: request('get'),
   post: request('post'),
   patch: request('patch'),
-  delete: request('delete'),
+  destroy: request('delete'),
 }
 

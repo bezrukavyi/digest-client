@@ -1,10 +1,13 @@
 import { all } from 'redux-saga/effects'
 import MailingList from 'store/Entities/MailingList'
-
+import Issue from 'store/Entities/Issue'
+import Initial from 'initial/saga'
 
 function* rootSaga() {
   yield all([
-    ...MailingList.saga,
+    ...Initial.root,
+    ...MailingList.saga.root,
+    ...Issue.saga.root,
   ])
 }
 

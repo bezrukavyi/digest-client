@@ -1,17 +1,35 @@
 import { select, call, put, takeEvery, takeLatest } from 'redux-saga/effects'
-import * as MailingList from './requests'
+import MailingList from './requests'
 import Path from 'constants/Path'
-import { redirect } from 'utils/redirect'
+import { redirect, replace } from 'utils/redirect'
+import { FETCH_ENTITY_SUCCESS } from 'store/Entities/types'
 
-function* fetchList({ context }) {
+function* fetch({ context, mailingListId }) {
   try {
-    const result = yield call(MailingList.index(context))
-    yield put({ type: "MAILING_LIST_FETCH_LIST_SUCCESS", data: result.data });
+    const payload = yield call(MailingList.show(context), { mailingListId })
+    yield put({ type: FETCH_ENTITY_SUCCESS, payload });
   } catch (e) {
     redirect(context)(Path.NotFound)
   }
 }
 
-export default [
-  takeLatest("MAILING_LIST_FETCH_LIST_REQUEST", fetchList),
-]
+function* updated({ payload, data, mailingListId }) {
+  try {
+    if (data.slug == mailingListId) {
+      yield put({ type: FETCH_ENTITY_SUCCESS, payload })
+    } else {
+      const path = Path.Dashboard.MailingList.as(data.slug)
+      yield window.location.replace(path)
+    }
+  } catch (e) {
+    replace(Path.NotFound)
+  }
+}
+
+
+export default {
+  fetch,
+  root: [
+    takeLatest('UPDATED_MAILING_LIST', updated)
+  ]
+}

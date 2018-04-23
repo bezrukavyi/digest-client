@@ -1,15 +1,15 @@
 import Layout from 'components/Layout'
-import User from 'components/User'
+import User from 'components/Dashboard/User'
 import withReduxSaga from 'store';
 import initial from 'initial'
 
-const SignUp = (props) => (
-  <Layout.Base>
+const Page = (props) => (
+  <Layout.Dashboard>
     <p>This is the sign up page</p>
     <User.SignUpForm />
-  </Layout.Base>
+  </Layout.Dashboard>
 )
 
-SignUp.getInitialProps = initial()
+Page.getInitialProps = initial()
 
-export default withReduxSaga(SignUp)
+export default withReduxSaga(Page)

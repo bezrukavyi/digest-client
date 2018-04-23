@@ -1,5 +1,5 @@
 import * as Type from './types'
-import { SUCCESS } from '../Api/types'
+import { SUCCESS } from 'store/Api/types'
 
 const user = (state = {}, { type, data }) => {
   switch (type) {

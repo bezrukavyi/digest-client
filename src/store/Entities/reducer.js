@@ -1,17 +1,19 @@
-import * as utils from './utils'
-import * as type from './types'
-import { SUCCESS } from '../Api/types'
+import { insert, clear, slice } from 'json-api-transform'
+import * as types from './types'
 
-const entities = (state = {}, { type, payload }) => {
+const entities = (state = {}, { type, names, payload }) => {
   switch (type) {
-    case type.FETCH_ENTITY + SUCCESS:
-    case type.UPDATE_ENTITY + SUCCESS:
-    case type.CREATE_ENTITY + SUCCESS:
-    case type.FETCH_ENTITIES + SUCCESS: {
-      return utils.complement(state, payload.data)
+    case types.FETCH_ENTITY_SUCCESS:
+    case types.UPDATE_ENTITY_SUCCESS:
+    case types.CREATE_ENTITY_SUCCESS:
+    case types.FETCH_ENTITIES_SUCCESS: {
+      return insert(state, payload.data)
     }
-    case type.DESTROY_ENTITY + SUCCESS: {
-      return utils.slice(state, payload.data)
+    case types.CLEAR_ENTITIES: {
+      return clear(state, names)
+    }
+    case types.DESTROY_ENTITY_SUCCESS: {
+      return slice(state, payload.data)
     }
     default:
       return state

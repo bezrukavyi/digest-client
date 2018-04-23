@@ -1,13 +1,14 @@
 import Layout from 'components/Layout'
 import withReduxSaga from 'store';
-import MailingList from 'components/MailingList';
+import Dashboard from 'components/Dashboard';
 import initial from 'initial'
 import middle from 'initial/middlewares'
 
-const Page = (props) => (
-  <Layout.Base>
-    <h1>Mailing List Item</h1>
-  </Layout.Base>
+const Page = ({ url }) => (
+  <Layout.Dashboard>
+    <Dashboard.MailingList.Show />
+    <Dashboard.MailingList.EditForm mailingListId={url.query.mailingListId} />
+  </Layout.Dashboard>
 )
 
 Page.getInitialProps = initial([middle.auth])

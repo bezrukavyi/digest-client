@@ -1,15 +1,15 @@
 import Layout from 'components/Layout'
-import User from 'components/User'
-import withReduxSaga from 'store';
+import User from 'components/Dashboard/User'
+import withReduxSaga from 'store'
 import initial from 'initial'
 
-const ForgotPassword = (props) => (
-  <Layout.Base>
+const Page = (props) => (
+  <Layout.Dashboard>
     <p>This is the forgot password page</p>
     <User.ForgotPasswordForm />
-  </Layout.Base>
+  </Layout.Dashboard>
 )
 
-ForgotPassword.getInitialProps = initial()
+Page.getInitialProps = initial()
 
-export default withReduxSaga(ForgotPassword)
+export default withReduxSaga(Page)

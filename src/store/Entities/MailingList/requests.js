@@ -1,5 +1,7 @@
 import Api from 'store/Api/actions'
 
-export const show = (context) => ({ id }) => Api.get(context)({ path: `dashboard/mailing_lists/${id}` })
+const show = (context) => ({ mailingListId }) => Api.get(context)({ path: mailingListId })
 
-export const index = (context) => () => Api.get(context)({ path: 'dashboard/mailing_lists' })
+export default {
+  show,
+}

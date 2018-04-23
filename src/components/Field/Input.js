@@ -1,13 +1,13 @@
 import React from 'react'
 import classnames from 'classnames'
 
-const Input = ({ name, type, ...props }) => {
+const Input = ({ name, label, type, ...props }) => {
   const touched = props.touched[name]
   const error = props.errors[name]
   const value = props.values[name]
 
   return (
-    <div className='form-group'>
+    <div className={classnames('form-group', { 'label__off': !label })}>
       <input
         type={type}
         name={name}

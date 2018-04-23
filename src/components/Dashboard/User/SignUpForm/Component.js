@@ -4,7 +4,7 @@ const SignUpForm = (props) => {
   const { handleSubmit, errors } = props
 
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <Field.Input name='email' type='email' {...props} />
       <Field.Input name='password' type='password' {...props} />
       <Field.Input name='passwordConfirmation' type='password' {...props} />
